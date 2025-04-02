@@ -1,13 +1,16 @@
 {
     "name": "build-test",
     "version": "1.0.0",
+    "homepage": "https://mayankmahavar1mg.github.io/build-test",
     "scripts": {
         "start": "catalyst start",
         "build": "catalyst build",
         "serve": "catalyst serve",
         "lint": "eslint .",
         "devBuild": "catalyst devBuild",
-        "devServe": "catalyst devServe"
+        "devServe": "catalyst devServe",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "_moduleAliases": {
         "@api": "api.js",
@@ -28,6 +31,7 @@
     "devDependencies": {
         "eslint": "^8.26.0",
         "eslint-plugin-react": "^7.34.1",
-        "eslint-plugin-react-hooks": "^4.6.0"
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "gh-pages": "^6.3.0"
     }
 }
