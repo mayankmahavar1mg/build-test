@@ -1,0 +1,7 @@
+[build]
+  publish = "build"  # Match this to your BUILD_OUTPUT_PATH in config
+  command = "npm run build"  # Or whatever build command you're using
+
+[build.environment]
+  NODE_ENV = "production"
+  # Add any other environment variables your build needs
