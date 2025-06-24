@@ -4,8 +4,8 @@
     "WEBPACK_DEV_SERVER_HOSTNAME": "0.0.0.0",
     "WEBPACK_DEV_SERVER_PORT": 3006,
     "BUILD_OUTPUT_PATH": "build",
-    "PUBLIC_STATIC_ASSET_PATH": "/assets/",
-    "PUBLIC_STATIC_ASSET_URL": "https://build-test-production.up.railway.app",
+    "PUBLIC_STATIC_ASSET_PATH": "https://0.0.0.0:3005/assets/",
+    "PUBLIC_STATIC_ASSET_URL": "https://0.0.0.0:3005",
     "API_URL": "",
     "ANALYZE_BUNDLE": false,
     "CLIENT_ENV_VARIABLES": ["API_URL"]
