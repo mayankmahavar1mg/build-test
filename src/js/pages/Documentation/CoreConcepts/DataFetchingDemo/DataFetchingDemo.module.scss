@@ -1,0 +1,317 @@
+.dataFetchingDemo {
+    .demoContent {
+        h2 {
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .controls {
+        background: white;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+
+        h3 {
+            color: #495057;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        p {
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .buttonGroup {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            .controlButton {
+                background: #007bff;
+                color: white;
+                border: none;
+                padding: 0.8rem 1.5rem;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: background-color 0.2s;
+
+                &:hover:not(:disabled) {
+                    background: #0056b3;
+                }
+
+                &:disabled {
+                    background: #6c757d;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+
+    .fetchingExample {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        .fetchType {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+
+            h3 {
+                color: #495057;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+
+            p {
+                color: #6c757d;
+                margin-bottom: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .loading {
+                text-align: center;
+                padding: 2rem;
+
+                .spinner {
+                    width: 40px;
+                    height: 40px;
+                    border: 4px solid #f3f3f3;
+                    border-top: 4px solid #007bff;
+                    border-radius: 50%;
+                    animation: spin 1s linear infinite;
+                    margin: 0 auto 1rem;
+                }
+
+                p {
+                    color: #6c757d;
+                    margin: 0;
+                }
+            }
+
+            .error {
+                background: #f8d7da;
+                color: #721c24;
+                padding: 1rem;
+                border-radius: 4px;
+                text-align: center;
+            }
+
+            .usersList {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .userCard {
+                    background: #f8f9fa;
+                    padding: 1rem;
+                    border-radius: 4px;
+                    border-left: 4px solid #007bff;
+
+                    h4 {
+                        margin: 0 0 0.5rem 0;
+                        color: #495057;
+                        font-size: 1rem;
+                    }
+
+                    p {
+                        margin: 0 0 0.5rem 0;
+                        color: #6c757d;
+                        font-size: 0.9rem;
+                    }
+
+                    .company {
+                        background: #007bff;
+                        color: white;
+                        padding: 0.2rem 0.5rem;
+                        border-radius: 12px;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+
+            .serverData {
+                .dataCard {
+                    background: #e8f5e8;
+                    padding: 1.5rem;
+                    border-radius: 4px;
+                    border-left: 4px solid #28a745;
+                    position: relative;
+
+                    h4 {
+                        margin: 0 0 1rem 0;
+                        color: #155724;
+                    }
+
+                    p {
+                        margin: 0 0 0.5rem 0;
+                        color: #155724;
+                        font-size: 0.9rem;
+                    }
+
+                    .badge {
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: #28a745;
+                        color: white;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 12px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+
+                    .apiData {
+                        margin-top: 1rem;
+                        padding-top: 1rem;
+                        border-top: 1px solid #d4edda;
+
+                        h5 {
+                            margin: 0 0 0.5rem 0;
+                            color: #155724;
+                            font-size: 0.9rem;
+                        }
+
+                        .apiResponse {
+                            background: #f8f9fa;
+                            border: 1px solid #e9ecef;
+                            border-radius: 4px;
+                            padding: 0.8rem;
+                            overflow-x: auto;
+
+                            pre {
+                                margin: 0;
+                                font-family: 'Courier New', monospace;
+                                font-size: 0.75rem;
+                                line-height: 1.3;
+                                color: #495057;
+                                white-space: pre-wrap;
+                                word-break: break-word;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .clientData {
+                .dataCard {
+                    background: #e3f2fd;
+                    padding: 1.5rem;
+                    border-radius: 4px;
+                    border-left: 4px solid #2196f3;
+                    position: relative;
+
+                    h4 {
+                        margin: 0 0 1rem 0;
+                        color: #1565c0;
+                    }
+
+                    p {
+                        margin: 0 0 0.5rem 0;
+                        color: #1565c0;
+                        font-size: 0.9rem;
+                    }
+
+                    .badge {
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: #2196f3;
+                        color: white;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 12px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                    }
+
+                    .apiData {
+                        margin-top: 1rem;
+                        padding-top: 1rem;
+                        border-top: 1px solid #bbdefb;
+
+                        h5 {
+                            margin: 0 0 0.5rem 0;
+                            color: #1565c0;
+                            font-size: 0.9rem;
+                        }
+
+                        .apiResponse {
+                            background: #f8f9fa;
+                            border: 1px solid #e9ecef;
+                            border-radius: 4px;
+                            padding: 0.8rem;
+                            overflow-x: auto;
+
+                            pre {
+                                margin: 0;
+                                font-family: 'Courier New', monospace;
+                                font-size: 0.75rem;
+                                line-height: 1.3;
+                                color: #495057;
+                                white-space: pre-wrap;
+                                word-break: break-word;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .codeExample {
+        margin-top: 3rem;
+        background: white;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+
+        h3 {
+            color: #495057;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .codeBlock {
+            margin-bottom: 2rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            h4 {
+                color: #495057;
+                margin-bottom: 1rem;
+                font-size: 1rem;
+            }
+
+            pre {
+                background: #f8f9fa;
+                border: 1px solid #e9ecef;
+                border-radius: 4px;
+                padding: 1rem;
+                overflow-x: auto;
+                font-family: 'Courier New', monospace;
+                font-size: 0.85rem;
+                line-height: 1.4;
+                color: #495057;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 

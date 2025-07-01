@@ -1,0 +1,93 @@
+.appShellDemo {
+    .demoContent {
+        h2 {
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .appShellExample {
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+        .shellHeader {
+            background: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            .nav {
+                display: flex;
+                gap: 1rem;
+
+                .navLink {
+                    color: white;
+                    text-decoration: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 4px;
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background: rgba(255,255,255,0.1);
+                    }
+                }
+            }
+        }
+
+        .shellContent {
+            min-height: 300px;
+            padding: 2rem;
+
+            .contentPlaceholder {
+                text-align: center;
+                color: #6c757d;
+
+                .loadingSkeleton {
+                    margin-bottom: 1rem;
+
+                    .skeletonLine {
+                        height: 20px;
+                        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+                        background-size: 200% 100%;
+                        animation: loading 1.5s infinite;
+                        margin-bottom: 0.5rem;
+                        border-radius: 4px;
+
+                        &:nth-child(1) { width: 80%; margin: 0 auto 0.5rem; }
+                        &:nth-child(2) { width: 60%; margin: 0 auto 0.5rem; }
+                        &:nth-child(3) { width: 40%; margin: 0 auto 0.5rem; }
+                    }
+                }
+            }
+        }
+
+        .shellFooter {
+            background: #f8f9fa;
+            padding: 1rem 2rem;
+            text-align: center;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+    }
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+} 

@@ -3,6 +3,7 @@ import { combineReducers } from "redux"
 import { shellReducer } from "@containers/App/reducer.js"
 import fetchInstance from "@api"
 import appReducer from './reducer'
+import homeReducer from './homeReducer'
 
 /**
  * Function that initializes the store with the initialstate and adds middlewares that can be used during action dispatch
@@ -16,7 +17,8 @@ const configureStore = (initialState) => {
     const store = createStore({
         reducer: combineReducers({ 
             shellReducer,
-            app: appReducer
+            app: appReducer,
+            homePageData: homeReducer
         }),
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({

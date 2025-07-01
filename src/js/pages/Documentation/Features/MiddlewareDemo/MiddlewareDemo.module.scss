@@ -1,0 +1,302 @@
+.middlewareDemo {
+    .demoContent {
+        h2 {
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .middlewareExamples {
+        display: grid;
+        gap: 2rem;
+
+        .middlewareExample {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+
+            h3 {
+                color: #495057;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+
+            p {
+                color: #6c757d;
+                margin-bottom: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .middlewareChain {
+                .middlewareItem {
+                    margin-bottom: 1rem;
+
+                    &.enabled {
+                        .middlewareInfo {
+                            border-color: #28a745;
+                            background: #f8fff9;
+                        }
+                    }
+
+                    &.disabled {
+                        .middlewareInfo {
+                            border-color: #dc3545;
+                            background: #fff8f8;
+                            opacity: 0.6;
+                        }
+                    }
+
+                    .middlewareInfo {
+                        border: 2px solid #e9ecef;
+                        border-radius: 4px;
+                        padding: 1rem;
+
+                        .middlewareHeader {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 0.5rem;
+
+                            .middlewareName {
+                                font-weight: bold;
+                                color: #495057;
+                            }
+
+                            .toggle {
+                                position: relative;
+                                display: inline-block;
+                                width: 50px;
+                                height: 24px;
+
+                                input {
+                                    opacity: 0;
+                                    width: 0;
+                                    height: 0;
+
+                                    &:checked + .slider {
+                                        background-color: #28a745;
+                                    }
+
+                                    &:checked + .slider:before {
+                                        transform: translateX(26px);
+                                    }
+                                }
+
+                                .slider {
+                                    position: absolute;
+                                    cursor: pointer;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    background-color: #ccc;
+                                    transition: .4s;
+                                    border-radius: 24px;
+
+                                    &:before {
+                                        position: absolute;
+                                        content: "";
+                                        height: 18px;
+                                        width: 18px;
+                                        left: 3px;
+                                        bottom: 3px;
+                                        background-color: white;
+                                        transition: .4s;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                        }
+
+                        .middlewareDescription {
+                            margin: 0;
+                            color: #6c757d;
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                    .chainArrow {
+                        text-align: center;
+                        color: #6c757d;
+                        font-size: 1.2rem;
+                        margin: 0.5rem 0;
+                    }
+                }
+            }
+
+            .requestSimulation {
+                .simulateBtn {
+                    background: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 0.8rem 1.5rem;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                    transition: background-color 0.2s;
+
+                    &:hover {
+                        background: #0056b3;
+                    }
+                }
+
+                .requestLog {
+                    h4 {
+                        color: #495057;
+                        margin-bottom: 1rem;
+                    }
+
+                    .noRequests {
+                        color: #6c757d;
+                        text-align: center;
+                        padding: 2rem;
+                        background: #f8f9fa;
+                        border-radius: 4px;
+                    }
+
+                    .logEntries {
+                        .logEntry {
+                            background: #f8f9fa;
+                            border: 1px solid #e9ecef;
+                            border-radius: 4px;
+                            padding: 1rem;
+                            margin-bottom: 0.5rem;
+
+                            .logHeader {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-bottom: 0.5rem;
+
+                                .logTimestamp {
+                                    color: #6c757d;
+                                    font-size: 0.8rem;
+                                }
+
+                                .logStatus {
+                                    padding: 0.2rem 0.5rem;
+                                    border-radius: 12px;
+                                    font-size: 0.8rem;
+                                    font-weight: bold;
+
+                                    &.status200 {
+                                        background: #d4edda;
+                                        color: #155724;
+                                    }
+
+                                    &.status404 {
+                                        background: #f8d7da;
+                                        color: #721c24;
+                                    }
+
+                                    &.status500 {
+                                        background: #f8d7da;
+                                        color: #721c24;
+                                    }
+                                }
+                            }
+
+                            .log-details {
+                                margin-bottom: 0.5rem;
+
+                                .log-method {
+                                    background: #007bff;
+                                    color: white;
+                                    padding: 0.2rem 0.5rem;
+                                    border-radius: 12px;
+                                    font-size: 0.8rem;
+                                    font-weight: bold;
+                                    margin-right: 0.5rem;
+                                }
+
+                                .log-path {
+                                    font-family: 'Courier New', monospace;
+                                    color: #495057;
+                                    font-size: 0.9rem;
+                                }
+                            }
+
+                            .log-middleware {
+                                .label {
+                                    font-size: 0.8rem;
+                                    color: #6c757d;
+                                    margin-right: 0.5rem;
+                                }
+
+                                .middleware-tags {
+                                    display: flex;
+                                    gap: 0.3rem;
+                                    flex-wrap: wrap;
+
+                                    .middleware-tag {
+                                        background: #e9ecef;
+                                        color: #495057;
+                                        padding: 0.2rem 0.5rem;
+                                        border-radius: 12px;
+                                        font-size: 0.7rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .custom-middleware {
+                .code-example {
+                    margin-bottom: 1.5rem;
+
+                    h4 {
+                        color: #495057;
+                        margin-bottom: 1rem;
+                    }
+
+                    .code-block {
+                        background: #f8f9fa;
+                        border: 1px solid #e9ecef;
+                        border-radius: 4px;
+                        padding: 1rem;
+                        font-family: 'Courier New', monospace;
+                        font-size: 0.8rem;
+                        color: #495057;
+                        overflow-x: auto;
+                        white-space: pre-wrap;
+                    }
+                }
+
+                .middleware-types {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 1rem;
+
+                    .type-item {
+                        background: #f8f9fa;
+                        border: 1px solid #e9ecef;
+                        border-radius: 4px;
+                        padding: 1rem;
+                        text-align: center;
+
+                        h5 {
+                            color: #495057;
+                            margin: 0 0 0.5rem 0;
+                        }
+
+                        p {
+                            margin: 0;
+                            color: #6c757d;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

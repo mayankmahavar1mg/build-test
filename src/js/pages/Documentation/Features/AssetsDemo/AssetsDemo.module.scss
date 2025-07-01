@@ -1,0 +1,222 @@
+.assetsDemo {
+    .demoContent {
+        h2 {
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .assetsExamples {
+        display: grid;
+        gap: 2rem;
+
+        .assetsExample {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+
+            h3 {
+                color: #495057;
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
+
+            p {
+                color: #6c757d;
+                margin-bottom: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .assetTypes {
+                .typeTabs {
+                    display: flex;
+                    gap: 0.5rem;
+                    margin-bottom: 1rem;
+
+                    .typeTab {
+                        padding: 0.5rem 1rem;
+                        border: 1px solid #007bff;
+                        background: white;
+                        color: #007bff;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        font-size: 0.9rem;
+
+                        &:hover {
+                            background: #f8f9ff;
+                        }
+
+                        &.active {
+                            background: #007bff;
+                            color: white;
+                        }
+                    }
+                }
+
+                .assetList {
+                    .assetItem {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0.8rem;
+                        border-bottom: 1px solid #f1f3f4;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        .assetInfo {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.2rem;
+
+                            .assetName {
+                                font-weight: bold;
+                                color: #495057;
+                                font-family: 'Courier New', monospace;
+                            }
+
+                            .assetType {
+                                background: #e9ecef;
+                                color: #495057;
+                                padding: 0.2rem 0.5rem;
+                                border-radius: 12px;
+                                font-size: 0.7rem;
+                                align-self: flex-start;
+                            }
+                        }
+
+                        .assetSize {
+                            color: #6c757d;
+                            font-weight: bold;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+
+            .fontDemo {
+                .fontControls {
+                    margin-bottom: 1.5rem;
+
+                    label {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        color: #495057;
+
+                        input[type="range"] {
+                            width: 150px;
+                        }
+
+                        span {
+                            font-weight: bold;
+                            min-width: 40px;
+                        }
+                    }
+                }
+
+                .fontPreview {
+                    .fontSample {
+                        display: grid;
+                        gap: 2rem;
+
+                        .fontInter, .fontRoboto {
+                            background: #f8f9fa;
+                            padding: 1.5rem;
+                            border-radius: 4px;
+                            border-left: 4px solid #007bff;
+
+                            h4 {
+                                margin: 0 0 1rem 0;
+                                color: #495057;
+                                border-bottom: 1px solid #e9ecef;
+                                padding-bottom: 0.5rem;
+                            }
+
+                            p {
+                                margin: 0 0 0.5rem 0;
+                                line-height: 1.4;
+                            }
+                        }
+
+                        .fontInter {
+                            font-family: 'Inter', sans-serif;
+                        }
+
+                        .fontRoboto {
+                            font-family: 'Roboto', sans-serif;
+                        }
+                    }
+                }
+            }
+
+            .optimizationDemo {
+                .optimizationStats {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+
+                    .statItem {
+                        background: #f8f9fa;
+                        border: 1px solid #e9ecef;
+                        border-radius: 4px;
+                        padding: 1rem;
+                        text-align: center;
+
+                        .statValue {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            color: #007bff;
+                            margin-bottom: 0.3rem;
+                        }
+
+                        .statLabel {
+                            font-size: 0.8rem;
+                            color: #6c757d;
+                        }
+                    }
+                }
+
+                .optimizationFeatures {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 1.5rem;
+
+                    .featureItem {
+                        background: #f8f9fa;
+                        border: 1px solid #e9ecef;
+                        border-radius: 4px;
+                        padding: 1rem;
+
+                        h5 {
+                            color: #495057;
+                            margin: 0 0 1rem 0;
+                            font-size: 1rem;
+                        }
+
+                        ul {
+                            margin: 0;
+                            padding-left: 1.2rem;
+                            color: #6c757d;
+                            font-size: 0.9rem;
+
+                            li {
+                                margin-bottom: 0.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

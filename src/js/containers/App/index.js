@@ -1,11 +1,16 @@
 import React from "react"
 import { Outlet } from "@tata1mg/router"
+import SideNavbar from "../../components/SideNavbar/SideNavbar"
+import css from "./App.scss"
 
 const App = () => {
     return (
-        <>
-            <Outlet />
-        </>
+        <div className={css.app}>
+            <SideNavbar />
+            <main className={css.main}>
+                <Outlet />
+            </main>
+        </div>
     )
 }
 

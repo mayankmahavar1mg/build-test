@@ -1,0 +1,203 @@
+.lifecycleDemo {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+
+      &:hover:not(:disabled) {
+        background: #0056b3;
+      }
+
+      &:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      &:nth-child(2) {
+        background: #dc3545;
+        
+        &:hover:not(:disabled) {
+          background: #c82333;
+        }
+      }
+
+      &:nth-child(3) {
+        background: #6c757d;
+        
+        &:hover:not(:disabled) {
+          background: #5a6268;
+        }
+      }
+    }
+  }
+
+  .lifecycleFlow {
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .flowDiagram {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 2rem;
+      gap: 1rem;
+
+      .stage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+
+        .stageNumber {
+          width: 40px;
+          height: 40px;
+          background: #007bff;
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .stageContent {
+          h4 {
+            color: #333;
+            margin: 0 0 0.25rem 0;
+            font-size: 0.9rem;
+          }
+
+          p {
+            color: #666;
+            margin: 0;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .arrow {
+        font-size: 1.5rem;
+        color: #007bff;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .eventsLog {
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .logContainer {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 4px;
+      padding: 1rem;
+      max-height: 300px;
+      overflow-y: auto;
+
+      .emptyLog {
+        text-align: center;
+        color: #6c757d;
+        font-style: italic;
+        padding: 2rem;
+      }
+
+      .eventEntry {
+        padding: 0.75rem;
+        border-bottom: 1px solid #e9ecef;
+        background: white;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+        }
+
+        &.error {
+          background: #f8d7da;
+          border-left: 4px solid #dc3545;
+        }
+
+        .eventHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0.5rem;
+
+          .eventStage {
+            font-weight: bold;
+            color: #333;
+            font-family: 'Courier New', monospace;
+          }
+
+          .eventTime {
+            color: #6c757d;
+            font-size: 0.9rem;
+          }
+        }
+
+        .eventDescription {
+          color: #495057;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .codeExample {
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    pre {
+      background: #2d3748;
+      color: #e2e8f0;
+      border-radius: 4px;
+      padding: 1.5rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      border: 1px solid #4a5568;
+    }
+  }
+} 

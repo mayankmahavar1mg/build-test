@@ -1,0 +1,370 @@
+.suspenseDemo {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    color: #495057;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  // Bundle Analysis Section
+  .bundleAnalysis {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #495057;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .bundleStats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+
+      .statCard {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 6px;
+        padding: 1rem;
+        text-align: center;
+
+        h4 {
+          color: #6c757d;
+          margin: 0 0 0.5rem 0;
+          font-size: 0.9rem;
+          font-weight: normal;
+        }
+
+        .statValue {
+          color: #495057;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .loading {
+      text-align: center;
+      color: #6c757d;
+      font-style: italic;
+    }
+  }
+
+  // Controls Section
+  .controls {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #495057;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .componentButtons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .loadBtn {
+        padding: 1rem;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        &:hover:not(:disabled) {
+          background: #0056b3;
+        }
+
+        &:disabled {
+          background: #6c757d;
+          cursor: not-allowed;
+        }
+
+        small {
+          font-size: 0.8rem;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .resetBtn {
+      padding: 0.75rem 1.5rem;
+      background: #6c757d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+
+      &:hover {
+        background: #5a6268;
+      }
+    }
+  }
+
+  // Component Display Section
+  .componentDisplay {
+    margin-bottom: 2rem;
+
+    .componentGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+
+      .componentSection {
+        background: white;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+
+        h4 {
+          color: #495057;
+          margin-bottom: 1rem;
+          font-size: 1.1rem;
+        }
+
+        .componentContainer {
+          min-height: 200px;
+          position: relative;
+
+          .placeholder {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 6px;
+            color: #6c757d;
+            text-align: center;
+
+            p {
+              margin: 0 0 0.5rem 0;
+              font-weight: bold;
+            }
+
+            small {
+              font-size: 0.8rem;
+            }
+          }
+
+          .fallback {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 6px;
+            color: #6c757d;
+
+            .spinner {
+              width: 30px;
+              height: 30px;
+              border: 3px solid #e9ecef;
+              border-top: 3px solid #007bff;
+              border-radius: 50%;
+              animation: spin 1s linear infinite;
+              margin-bottom: 1rem;
+            }
+
+            p {
+              margin: 0;
+              font-size: 0.9rem;
+            }
+          }
+
+          .loadTime {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #28a745;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  // Performance Metrics Section
+  .performanceMetrics {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #495057;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .metricsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+
+      .metricCard {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 6px;
+        padding: 1rem;
+
+        h4 {
+          color: #495057;
+          margin: 0 0 0.5rem 0;
+          font-size: 1rem;
+        }
+
+        p {
+          color: #6c757d;
+          font-size: 0.9rem;
+          margin: 0 0 1rem 0;
+          line-height: 1.4;
+        }
+
+        .metricValue {
+          color: #28a745;
+          font-weight: bold;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  // Code Example Section
+  .codeExample {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #495057;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .codeTabs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1.5rem;
+
+      .codeTab {
+        h4 {
+          color: #495057;
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+        }
+
+        pre {
+          background: #f8f9fa;
+          border: 1px solid #e9ecef;
+          border-radius: 4px;
+          padding: 1rem;
+          font-size: 0.8rem;
+          color: #495057;
+          overflow-x: auto;
+          margin: 0;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  // Bundle Details Section
+  .bundleDetails {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+
+    h3 {
+      color: #495057;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .resourceList {
+      h4 {
+        color: #495057;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .resourceGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+
+        .resourceItem {
+          background: #f8f9fa;
+          border: 1px solid #e9ecef;
+          border-radius: 4px;
+          padding: 0.75rem;
+          display: grid;
+          grid-template-columns: 1fr auto auto;
+          gap: 1rem;
+          align-items: center;
+          font-size: 0.9rem;
+
+          .resourceName {
+            color: #495057;
+            font-weight: bold;
+            word-break: break-all;
+          }
+
+          .resourceSize {
+            color: #28a745;
+            font-weight: bold;
+            text-align: right;
+          }
+
+          .resourceTime {
+            color: #6c757d;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

@@ -1,0 +1,335 @@
+.csrfDemo {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h2 {
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .protectionToggle {
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .toggle {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      .slider {
+        position: relative;
+        width: 60px;
+        height: 34px;
+        background: #ccc;
+        border-radius: 34px;
+        transition: background 0.3s;
+
+        &:before {
+          content: "";
+          position: absolute;
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background: white;
+          border-radius: 50%;
+          transition: transform 0.3s;
+        }
+      }
+
+      input:checked + .slider {
+        background: #007bff;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      .label {
+        font-weight: 500;
+        color: #495057;
+      }
+    }
+  }
+
+  .tokenSection {
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .tokenDisplay {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 4px;
+      padding: 1rem;
+
+      code {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        flex: 1;
+      }
+
+      .generateBtn {
+        padding: 0.5rem 1rem;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #218838;
+        }
+      }
+    }
+  }
+
+  .demoSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .formSection, .attackSection {
+      h3 {
+        color: #333;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .demoForm {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 4px;
+      padding: 1.5rem;
+
+      .formGroup {
+        margin-bottom: 1rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: #495057;
+          font-weight: 500;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.75rem;
+          border: 1px solid #ced4da;
+          border-radius: 4px;
+          font-size: 1rem;
+
+          &:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+          }
+        }
+      }
+
+      .submitBtn {
+        width: 100%;
+        padding: 0.75rem;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #0056b3;
+        }
+      }
+    }
+
+    .attackSection {
+      .attackBtn {
+        width: 100%;
+        padding: 0.75rem;
+        background: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #c82333;
+        }
+      }
+
+      .attackNote {
+        color: #6c757d;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+  }
+
+  .requestLog {
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .logContainer {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 4px;
+      padding: 1rem;
+      max-height: 300px;
+      overflow-y: auto;
+
+      .emptyLog {
+        text-align: center;
+        color: #6c757d;
+        font-style: italic;
+        padding: 2rem;
+      }
+
+      .logEntry {
+        display: flex;
+        gap: 1rem;
+        padding: 0.5rem;
+        border-bottom: 1px solid #e9ecef;
+        font-size: 0.9rem;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .timestamp {
+          color: #6c757d;
+          font-family: 'Courier New', monospace;
+          min-width: 80px;
+        }
+
+        .message {
+          flex: 1;
+        }
+
+        &.success {
+          background: #d4edda;
+          border-left: 4px solid #28a745;
+        }
+
+        &.warning {
+          background: #fff3cd;
+          border-left: 4px solid #ffc107;
+        }
+
+        &.error {
+          background: #f8d7da;
+          border-left: 4px solid #dc3545;
+        }
+
+        &.info {
+          background: #d1ecf1;
+          border-left: 4px solid #17a2b8;
+        }
+      }
+    }
+  }
+
+  .codeExample {
+    margin-bottom: 2rem;
+
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .codeTabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+
+      .codeTab {
+        h4 {
+          color: #333;
+          margin-bottom: 0.5rem;
+        }
+
+        pre {
+          background: #2d3748;
+          color: #e2e8f0;
+          border-radius: 4px;
+          padding: 1.5rem;
+          overflow-x: auto;
+          font-size: 0.9rem;
+          line-height: 1.4;
+          margin: 0;
+          border: 1px solid #4a5568;
+        }
+      }
+    }
+  }
+
+  .securityInfo {
+    h3 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .benefitsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+
+      .benefit {
+        background: white;
+        border: 1px solid #e9ecef;
+        border-radius: 4px;
+        padding: 1.5rem;
+
+        h4 {
+          color: #333;
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+        }
+
+        p {
+          color: #666;
+          margin: 0;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+} 
