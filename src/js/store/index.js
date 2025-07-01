@@ -2,6 +2,7 @@ import { configureStore as createStore } from "@reduxjs/toolkit"
 import { combineReducers } from "redux"
 import { shellReducer } from "@containers/App/reducer.js"
 import fetchInstance from "@api"
+import appReducer from './reducer'
 
 /**
  * Function that initializes the store with the initialstate and adds middlewares that can be used during action dispatch
@@ -13,7 +14,10 @@ import fetchInstance from "@api"
 const configureStore = (initialState) => {
     const api = fetchInstance
     const store = createStore({
-        reducer: combineReducers({ shellReducer }),
+        reducer: combineReducers({ 
+            shellReducer,
+            app: appReducer
+        }),
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 thunk: {
