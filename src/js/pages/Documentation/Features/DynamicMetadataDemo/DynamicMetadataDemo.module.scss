@@ -161,4 +161,46 @@
       }
     }
   }
+
+  .importantNotes {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+
+    h3 {
+      color: #856404;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.75rem;
+        color: #856404;
+        line-height: 1.5;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        strong {
+          color: #533f03;
+        }
+
+        code {
+          background: #fff;
+          padding: 0.2rem 0.4rem;
+          border-radius: 3px;
+          font-size: 0.9rem;
+          color: #e83e8c;
+          border: 1px solid #ffeaa7;
+        }
+      }
+    }
+  }
 } 

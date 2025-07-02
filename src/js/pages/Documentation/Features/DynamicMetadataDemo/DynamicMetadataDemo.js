@@ -28,8 +28,8 @@ const DynamicMetadataDemo = () => {
     }
   };
 
-  // Simulate setMetaData function
-  const setMetaData = (apiResponse) => {
+  // Simulate setMetaData function for demo purposes
+  const simulateSetMetaData = (apiResponse) => {
     const pageData = pages[currentPage];
     const metaData = [
       <title key="title">{pageData.title}</title>,
@@ -58,19 +58,19 @@ const DynamicMetadataDemo = () => {
 
   useEffect(() => {
     // Initialize with home page
-    setMetaData(null);
+    simulateSetMetaData(null);
   }, []);
 
   useEffect(() => {
     if (apiResponse) {
-      setMetaData(apiResponse);
+      simulateSetMetaData(apiResponse);
     }
   }, [apiResponse, currentPage]);
 
   return (
     <div className={styles.dynamicMetadataDemo}>
       <h2>Dynamic Metadata Demo</h2>
-      <p>This demo shows how to implement dynamic metadata for different pages in Catalyst.</p>
+      <p>This demo shows how to implement dynamic metadata for different pages in Catalyst using the built-in <code>setMetaData</code> function.</p>
       
       <div className={styles.pageSelector}>
         <h3>Select Page</h3>
@@ -117,25 +117,42 @@ const DynamicMetadataDemo = () => {
       </div>
 
       <div className={styles.codeExample}>
-        <h3>Code Example</h3>
+        <h3>Proper Catalyst setMetaData Implementation</h3>
         <pre>
-{`// Page Component
+{`// Page Component with proper setMetaData
 import React from "react"
 
 function HomePage() {
   return <div>Homepage</div>
 }
 
+// ✅ CORRECT: Use Catalyst's setMetaData function
+// This function receives apiResponse from serverFetcher/clientFetcher
 const setMetaData = (apiResponse) => {
+  // apiResponse contains data from your fetchers
+  const pageData = apiResponse?.pageData || {
+    title: 'Default Home Page',
+    description: 'Default description'
+  }
+  
   return [
-    <title>Home Page</title>,
-    <meta name="description" content="Free Web tutorials"/>,
-    <meta name="keywords" content="HTML, CSS, JavaScript"/>,
-    <meta name="author" content="John Doe"/>
+    <title key="title">{pageData.title}</title>,
+    <meta key="description" name="description" content={pageData.description} />,
+    <meta key="keywords" name="keywords" content={pageData.keywords} />,
+    <meta key="author" name="author" content={pageData.author} />
   ]
 }
 
+// Attach setMetaData to the component
 HomePage.setMetaData = setMetaData
+
+// Add your fetchers
+HomePage.serverFetcher = async () => {
+  const response = await fetch('/api/page-data')
+  const data = await response.json()
+  return { pageData: data }
+}
+
 export default HomePage`}
         </pre>
       </div>
@@ -157,8 +174,80 @@ export default HomePage`}
           </pre>
         </div>
       </div>
+
+      <div className={styles.importantNotes}>
+        <h3>Key Points About Catalyst's setMetaData</h3>
+        <ul>
+          <li><strong>Function receives apiResponse:</strong> The <code>setMetaData</code> function automatically receives the response from your <code>serverFetcher</code> and <code>clientFetcher</code></li>
+          <li><strong>Must be attached to component:</strong> Use <code>Component.setMetaData = setMetaData</code> to attach the function</li>
+          <li><strong>Returns array of elements:</strong> Return an array of JSX elements like <code>&lt;title&gt;</code> and <code>&lt;meta&gt;</code> tags</li>
+          <li><strong>Works with both SSR and CSR:</strong> Metadata is set during server-side rendering and client-side navigation</li>
+          <li><strong>Dynamic based on data:</strong> You can use the <code>apiResponse</code> to create dynamic metadata based on fetched data</li>
+        </ul>
+      </div>
     </div>
   );
 };
+
+// ✅ PROPER IMPLEMENTATION: Catalyst's setMetaData function
+// This function receives apiResponse from serverFetcher/clientFetcher
+const setMetaData = (apiResponse) => {
+  // Use data from fetchers to create dynamic metadata
+  const pageData = apiResponse?.pageData || {
+    title: 'Dynamic Metadata Demo - Catalyst',
+    description: 'Learn how to implement dynamic metadata in Catalyst applications',
+    keywords: 'catalyst, dynamic metadata, react, ssr',
+    author: 'Catalyst Team'
+  }
+  
+  return [
+    <title key="title">{pageData.title}</title>,
+    <meta key="description" name="description" content={pageData.description} />,
+    <meta key="keywords" name="keywords" content={pageData.keywords} />,
+    <meta key="author" name="author" content={pageData.author} />,
+    <meta key="og:title" property="og:title" content={pageData.title} />,
+    <meta key="og:description" property="og:description" content={pageData.description} />
+  ]
+}
+
+// Attach setMetaData to the component
+DynamicMetadataDemo.setMetaData = setMetaData
+
+// Add fetchers to demonstrate how apiResponse works
+DynamicMetadataDemo.serverFetcher = async () => {
+  try {
+    // Simulate API call that returns page metadata
+    await new Promise(resolve => setTimeout(resolve, 300))
+    return {
+      pageData: {
+        title: 'Dynamic Metadata Demo - Server Rendered',
+        description: 'This page demonstrates dynamic metadata with server-side rendering',
+        keywords: 'catalyst, dynamic metadata, server-side rendering, react',
+        author: 'Catalyst Team'
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching metadata data:', error)
+    throw error
+  }
+}
+
+DynamicMetadataDemo.clientFetcher = async () => {
+  try {
+    // Simulate API call that returns page metadata
+    await new Promise(resolve => setTimeout(resolve, 200))
+    return {
+      pageData: {
+        title: 'Dynamic Metadata Demo - Client Rendered',
+        description: 'This page demonstrates dynamic metadata with client-side navigation',
+        keywords: 'catalyst, dynamic metadata, client-side rendering, react',
+        author: 'Catalyst Team'
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching metadata data:', error)
+    throw error
+  }
+}
 
 export default DynamicMetadataDemo; 

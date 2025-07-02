@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useCurrentRouteData } from '@tata1mg/router'
 import DocumentationLayout from '../../DocumentationLayout'
 import css from './DataFetchingDemo.module.scss'
+import fetchInstance from '@api'
 
 const DataFetchingDemo = () => {
     // Catalyst's useCurrentRouteData hook for server/client fetched data
@@ -178,8 +179,8 @@ const Component = () => {
 DataFetchingDemo.serverFetcher = async () => {
     try {
         // Real API call on server
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
-        const postData = await response.json()
+        const postData = await fetchInstance('https://jsonplaceholder.typicode.com/posts/1')
+        // const postData = await response.json()
         
         return {
             serverMessage: 'Data fetched on server using Catalyst serverFetcher',
